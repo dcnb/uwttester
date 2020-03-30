@@ -1,15 +1,18 @@
----
-# find and count unique subjects
----
-{%- if site.data.theme.subjects-fields -%}
-{%- assign subjects-fields = site.data.theme.subjects-fields | split: ";" -%}
-{%- assign subjects = "" -%}
-{%- for c in subjects-fields -%}
-{% assign new = site.data[site.metadata] | map: c | join: ";" %}
-{% assign subjects = subjects | append: ";" | append: new %}
-{%- endfor -%}
-{%- assign uniqSubjects = subjects | downcase | split: ";" | array_count_uniq -%}
 { "subjects": [
-    {% for s in uniqSubjects %}{ "subject" : {{ s[0] | jsonify }}, "count" : {{ s[1] | jsonify }}, "link" : {{ s[0] | url_param_escape | prepend: '/browse.html#' | absolute_url | jsonify }} }{% unless forloop.last %},
-    {% endunless %}{% endfor %}
-]}{%- endif -%}
+    { "subject": "american football", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#american%20football" },
+    { "subject": "buildings", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#buildings" },
+    { "subject": "campuses", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#campuses" },
+    { "subject": "county courthouses", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#county%20courthouses" },
+    { "subject": "failure", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#failure" },
+    { "subject": "frank b. robinson", "count": 2, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#frank%20b.%20robinson" },
+    { "subject": "material abundance", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#material%20abundance" },
+    { "subject": "pacific photo co.", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#pacific%20photo%20co." },
+    { "subject": "picture postcards", "count": 2, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#picture%20postcards" },
+    { "subject": "public buildings", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#public%20buildings" },
+    { "subject": "spokane post card co.", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#spokane%20post%20card%20co." },
+    { "subject": "success", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#success" },
+    { "subject": "trees", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#trees" },
+    { "subject": "universities", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#universities" },
+    { "subject": "vandal athletics", "count": 1, "link": "https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#vandal%20athletics" }
+]
+}

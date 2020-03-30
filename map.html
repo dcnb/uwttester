@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Map | CollectionBuilder-GH</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://collectionbuilder.github.io/collectionbuilder-gh/favicon.ico">
+<!-- built with CollectionBuilder-GH https://github.com/CollectionBuilder/collectionbuilder-gh -->
+<meta name="generator" content="collectionbuilder-gh" />
+<meta http-equiv="Content-Language" content="en-us" >
+
+
+
+<!-- load style sheets -->
+
+<link rel="stylesheet" href="https://collectionbuilder.github.io/collectionbuilder-gh/assets/lib/bootstrap.min.css" type="text/css">
+<script defer src="https://collectionbuilder.github.io/collectionbuilder-gh/assets/lib/fontawesome-free/js/all.min.js"></script>
+
+
+<link rel="stylesheet" href="https://collectionbuilder.github.io/collectionbuilder-gh/assets/lib/leaflet/leaflet.css">
+<link rel="stylesheet" href="https://collectionbuilder.github.io/collectionbuilder-gh/assets/lib/leaflet/leaflet.fusesearch.css">
+<link rel="stylesheet" href="https://collectionbuilder.github.io/collectionbuilder-gh/assets/lib/leaflet/MarkerCluster.css">
+<link rel="stylesheet" href="https://collectionbuilder.github.io/collectionbuilder-gh/assets/lib/leaflet/MarkerCluster.Default.css">
+
+<!-- load custom css last to allow overrides -->
+<link rel="stylesheet" href="https://collectionbuilder.github.io/collectionbuilder-gh/assets/css/custom.css" type="text/css">
+
+<!-- Last build date: 2020-03-30 -->
+  </head>
+
+  <body>
+    <div class="container pt-2">
+    <h1 class="h3">
+        <a href="https://collectionbuilder.github.io/collectionbuilder-gh/" class="text-dark text-uppercase font-weight-normal">CollectionBuilder-GH</a>
+        <small class="text-muted">| a template for creating simple digital exhibits</small>
+    </h1>
+</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#page-nav" aria-controls="page-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="page-nav">
+            <ul class="navbar-nav mr-auto">
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="/collectionbuilder-gh/">Home</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="/collectionbuilder-gh/browse.html">Browse</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="/collectionbuilder-gh/subjects.html">Subjects</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="/collectionbuilder-gh/locations.html">Locations</a>
+                </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link " href="/collectionbuilder-gh/map.html">Map</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="/collectionbuilder-gh/timeline.html">Timeline</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="/collectionbuilder-gh/data/">Data</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="/collectionbuilder-gh/about.html">About</a>
+                </li></ul>
+            
+            <script>
+    function site_search() {
+        var query = document.getElementById("site-search").value
+        window.open("https://collectionbuilder.github.io/collectionbuilder-gh/search/index.html?q=" + encodeURIComponent(query), "_self" );
+    }
+</script>
+<form class="form-inline my-2 my-lg-0" role="search" id="search" onsubmit="site_search(); return false;">
+    <div class="input-group">
+        <input id="site-search" class="form-control " type="text" placeholder="Search" aria-label="Search box">
+        <div class="input-group-append">
+            <button class="btn btn-light" type="submit">
+                <span id="search-icon"><svg viewBox="0 0 1024 974" height="16px" width="20px"><path d="M960 832L710.875 582.875C746.438 524.812 768 457.156 768 384 768 171.96900000000005 596 0 384 0 171.969 0 0 171.96900000000005 0 384c0 212 171.969 384 384 384 73.156 0 140.812-21.562 198.875-57L832 960c17.5 17.5 46.5 17.375 64 0l64-64C977.5 878.5 977.5 849.5 960 832zM384 640c-141.375 0-256-114.625-256-256s114.625-256 256-256 256 114.625 256 256S525.375 640 384 640z"/></svg></span>
+                <span class="sr-only">Search</span>
+            </button>
+        </div>
+    </div>
+</form>
+            
+        </div>
+    </div>
+</nav>
+
+    <main role="main">
+    <div id="map"></div>
+
+    </main>
+    <footer class="bg-dark pt-4 container-fluid ">
+
+    <div class="row align-items-center border-bottom border-white pb-4 mb-2">
+
+        <div class="col-md-8 mt-2">
+
+            <h4><a href="https://collectionbuilder.github.io/collectionbuilder-gh/" class="text-white font-weight-normal">CollectionBuilder-GH</a></h4>
+            <p class="text-white"><small>CollectionBuilder-GH is a template for creating small digital collection exhibits on GitHub Pages designed for teaching digital library skills</small></p>
+            <nav>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                    
+                        <a class="nav-link text-light" href="/collectionbuilder-gh/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link text-light" href="/collectionbuilder-gh/browse.html">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link text-light" href="/collectionbuilder-gh/subjects.html">Subjects</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link text-light" href="/collectionbuilder-gh/locations.html">Locations</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link text-light active" href="/collectionbuilder-gh/map.html">Map</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link text-light" href="/collectionbuilder-gh/timeline.html">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link text-light" href="/collectionbuilder-gh/data/">Data</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link text-light" href="/collectionbuilder-gh/about.html">About</a>
+                    </li></ul>
+            </nav>
+
+        </div>
+
+        <div class="col-md-4 mt-2 text-right">
+            <p class="text-white" id="footer-credits">
+                <small><em>built with</em>
+                    <a href="https://collectionbuilder.github.io/" target="_blank" rel="noopener" title="CollectionBuilder">
+                        <img src="/collectionbuilder-gh/assets/img/collectionbuilder-logo.png" class="img-fluid" alt="CollectionBuilder logo" >
+                    </a>
+                </small>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="col-md-12 text-center pt-3 pb-1">
+        <p class="text-white">Last updated 2020</p>
+    </div>
+
+</footer>
+    <!-- Optional JS for Bootstrap: jQuery first, then Bootstrap bundle JS -->
+<script src="/collectionbuilder-gh/assets/lib/jquery-3.4.1.min.js"></script>
+<script src="/collectionbuilder-gh/assets/lib/bootstrap.bundle.min.js"></script>
+<!-- load other js -->
+<script src="https://collectionbuilder.github.io/collectionbuilder-gh/assets/lib/lazysizes.min.js" async></script>
+
+
+
+<!-- load leaflet dependencies -->
+<script src="/collectionbuilder-gh/assets/lib/leaflet/leaflet.js"></script>
+<script src="/collectionbuilder-gh/assets/lib/leaflet/fuse.min.js"></script>
+<script src="/collectionbuilder-gh/assets/lib/leaflet/leaflet.fusesearch.js"></script>
+<script src="/collectionbuilder-gh/assets/lib/leaflet/leaflet.markercluster.js"></script>
+<script src="/collectionbuilder-gh/assets/lib/leaflet/leaflet.markercluster.freezable.js"></script>
+
+<script>
+(function(){
+    /* add collection map data */
+    var geodata = { "type": "FeatureCollection", "features": [ 
+    
+    { "type":"Feature", "geometry":{ "type":"Point", "coordinates":[-117.009633,46.725562] }, "properties":
+    { "title": "Administration Building, University of Idaho, No. 30", 
+    "date": "1910","creator": "Pacific Photo Co.","subject": "universities; buildings; campuses; picture postcards","location": "Moscow, Idaho",
+    "format": "image/jpeg", "filename": "demo_001.jpg", "id": "demo_001" } }, 
+    { "type":"Feature", "geometry":{ "type":"Point", "coordinates":[-117.428031,47.66432] }, "properties":
+    { "title": "Spokane County Court House, Spokane, Washington", 
+    "date": "1912-09-08","creator": "Spokane Post Card Co.","subject": "public buildings; county courthouses; trees; picture postcards","location": "Spokane, Washington",
+    "format": "application/pdf", "filename": "demo_002.pdf", "id": "demo_002" } }, 
+    { "type":"Feature", "geometry":{ "type":"Point", "coordinates":[-117.015671,46.726113] }, "properties":
+    { "title": "University of Idaho vs. University of Southern California (Football), 10/30/1925", 
+    "date": "1925-10-30","creator": "Vandal Athletics","subject": "American Football","location": "Moscow, Idaho", "youtube": "CVXQ3X6Q8oU", 
+    "format": "video/mp4", "filename": null, "id": "demo_004" } }
+    ]};
+
+    /* init map and set zoom */
+    if (window.location.hash) {
+        /* if url has a hash, it is split by comma into coordinates that set the view */
+        var hashfilter = decodeURIComponent(location.hash.substr(1));
+        var latitudeHash = hashfilter.split(',')[0]
+        var longitudeHash = hashfilter.split(',')[1]
+        var map = L.map('map').setView([latitudeHash,longitudeHash],16);
+    } else {
+        var map = L.map('map').setView([46.727485,-117.014185],7);
+    }
+
+    /* add map layer options */
+    var Esri_WorldStreetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+    });
+    var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+        maxZoom: 16
+    });
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+    /* add base map switcher */
+    var baseMaps = {
+        "Esri World StreetMap": Esri_WorldStreetMap,
+        "Esri National Geo": Esri_NatGeoWorldMap,
+        "Esri Imagery": Esri_WorldImagery
+    };
+    L.control.layers(baseMaps).addTo(map);
+    /* load base map */
+    Esri_WorldStreetMap.addTo(map);
+
+    
+    /* add leaflet-fusesearch */
+    var options = {
+        title: 'Search Map Items',
+        locationholder: 'Search map items...',
+        threshold: 0.35 
+    };
+    var searchCtrl = L.control.fuseSearch(options);
+    searchCtrl.addTo(map);
+    searchCtrl.indexFeatures(geodata.features, ["title","date","creator","subject","location"]);
+
+    
+    /* create cluster group */
+    var markers = L.markerClusterGroup({ maxClusterRadius: 15, singleMarkerMode: true , removeOutsideVisibleBounds: false });
+
+    /* function to create object popups */
+    function objectPopups(feature, layer) {
+        
+        /* bind feature for search */
+        feature.layer = layer;
+        /* calculate item link */
+        var itemHref = '/collectionbuilder-gh/item.html?id=' + feature.properties.id;
+        /* find object thumb based on format */
+        var thumbSrc;
+        if (feature.properties.format.includes("audio")) {
+            thumbSrc = '/collectionbuilder-gh/assets/img/audio.svg';
+        } else if (feature.properties.format.includes("pdf")) {
+            thumbSrc = '/collectionbuilder-gh/assets/img/pdf.svg';
+        } else if (feature.properties.format.includes("video")) {
+            thumbSrc = 'https://img.youtube.com/vi/' +  feature.properties.youtube + '/default.jpg';
+        } else {
+            thumbSrc = '/collectionbuilder-gh/objects/' +  feature.properties.filename;
+        }    
+        /* create popup content */
+        var popupTemplate = '<h4><a class="text-dark" href="' + itemHref + '">' +
+            feature.properties.title + '</a></h4><div class="text-center"><a href="' + itemHref + 
+            '" ><img class="mapthumb img-thumb" src="' +  thumbSrc + '" alt="item thumbnail"></a></div><p class="mt-1">';
+        /* add metadata fields */
+        
+        if (feature.properties.date) {
+            popupTemplate += '<strong>Date:</strong> ' + feature.properties.date + '<br>'; 
+        }
+        
+        if (feature.properties.creator) {
+            popupTemplate += '<strong>Creator:</strong> ' + feature.properties.creator + '<br>'; 
+        }
+        
+        if (feature.properties.subject) {
+            popupTemplate += '<strong>Subjects:</strong> ' + feature.properties.subject + '<br>'; 
+        }
+        
+        if (feature.properties.location) {
+            popupTemplate += '<strong>Location:</strong> ' + feature.properties.location + '<br>'; 
+        }
+        
+        /* add object link button to popup */
+        popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >View Item</a></div>';
+        /* add object popup to map layer */
+        layer.bindPopup(popupTemplate);
+    }
+    /* function to add objects to map */
+    function objectMarkers(feature,latlng) {
+        var marker = L.marker(latlng);
+        markers.addLayer(marker);
+        return marker;
+    }
+
+    /* use geoJson features to add objects to map */
+    L.geoJson(geodata, {
+        onEachFeature: objectPopups,
+        pointToLayer: objectMarkers
+    });
+    map.addLayer(markers);
+    
+    
+    /* uncluster when search is clicked */
+    document.querySelector('a.button').addEventListener("click", function() {
+        markers.disableClustering();
+    });
+    /* recluster when search is closed */
+    document.querySelector('a.close').addEventListener("click", function() {
+        markers.enableClustering();
+        document.querySelector('input.search-input').value = "";
+    });
+
+})();
+</script>
+
+
+
+
+
+
+
+
+    <script>
+    // When the user scrolls down from the top of the document, show the button
+    window.onscroll = function () {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            document.getElementById("scroll-to-top").style.display = "block";
+        } else {
+            document.getElementById("scroll-to-top").style.display = "none";
+        }
+    }
+    // scroll to top function
+    function scrollToTop() {
+        $('html, body').animate({scrollTop: 0}, 750);
+    }
+</script>
+<button id="scroll-to-top" type="button" class="btn btn-link btn-lg" onclick="scrollToTop();" title="Back to Top" aria-label="Back to Top">
+    <span class="fa fa-angle-double-up fa-stack-1x" ></span>
+</button>
+  </body>
+
+</html>

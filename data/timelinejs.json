@@ -1,37 +1,76 @@
----
-# generate time-focused json data suitable for TimelineJS
----
-{%- assign items = site.data[site.metadata] -%}
 {
     "title": {
         "media": {
-          "url": "{% include image/featured-image.html %}",
-          "caption": {{ featuredItem.title | jsonify }},
-          "credit": {{ site.title | jsonify }}
+          "url": "https://collectionbuilder.github.io/collectionbuilder-gh/objects/demo_001.jpg",
+          "caption": "Administration Building, University of Idaho, No. 30",
+          "credit": "CollectionBuilder-GH"
         },
         "text": {
-          "headline": {{ site.title | append: ' Timeline' | jsonify }},
-          "text": {{ site.description | jsonify }}
+          "headline": "CollectionBuilder-GH Timeline",
+          "text": "CollectionBuilder-GH is a template for creating small digital collection exhibits on GitHub Pages designed for teaching digital library skills"
         }
     },
     "events": [
-      {% for item in items %}{% if item.date %}{
+      {
         "media": {
-          "url": "{% if item.format contains 'image' %}{% include image/medium.html %}{% elsif item.youtubeid %}{% include image/youtube-large.html %}{% else %}{% include image/thumb.html %}{% endif %}",
-          "caption": {{ item.title | jsonify }},
-          "link": "{% include item-link.html %}",
-          "credit": "{{ site.title }}"
+          "url": "/collectionbuilder-gh/objects/demo_001.jpg",
+          "caption": "Administration Building, University of Idaho, No. 30",
+          "link": "/collectionbuilder-gh/item.html?id=demo_001",
+          "credit": "CollectionBuilder-GH"
         },
-        "start_date": { {% if item.date contains '-' %}{% assign dates = item.date | split: '-' %}
-          "month": "{{ dates[1] }}",
-          "day": "{{ dates[2] }}",
-          "year": "{{ dates[0] }}"{% elsif item.date contains '/' %}"year": "{{ item.date | strip | split: '/' | last }}"{% else %}
-          "year": "{{ item.date }}"{% endif %}
+        "start_date": { 
+          "year": "1910"
         },
         "text": {
-          "headline": {{ item.title | jsonify }}{% if item.description %},
-          "text": {{ item.description | jsonify }}{% endif %}
+          "headline": "Administration Building, University of Idaho, No. 30",
+          "text": "Photographic postcard of the University of Idaho administration building in Moscow, Idaho."
         }
-      }{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}
+      },{
+        "media": {
+          "url": "/collectionbuilder-gh/assets/img/pdf.svg",
+          "caption": "Spokane County Court House, Spokane, Washington",
+          "link": "/collectionbuilder-gh/item.html?id=demo_002",
+          "credit": "CollectionBuilder-GH"
+        },
+        "start_date": { 
+          "month": "09",
+          "day": "08",
+          "year": "1912"
+        },
+        "text": {
+          "headline": "Spokane County Court House, Spokane, Washington",
+          "text": "Postcard is of the Spokane County Courthouse in Spokane, Washington. Postmark 9/8/1912, Spokane, WA. Destination San Francisco, CA."
+        }
+      },{
+        "media": {
+          "url": "/collectionbuilder-gh/assets/img/audio.svg",
+          "caption": "Good News - Power",
+          "link": "/collectionbuilder-gh/item.html?id=demo_003",
+          "credit": "CollectionBuilder-GH"
+        },
+        "start_date": { 
+          "year": "1947"
+        },
+        "text": {
+          "headline": "Good News - Power",
+          "text": "Psychiana radio program episode begins with assurance that there is a Power that can get people what they desire. Robinson then discusses his early life failures and childhood seeking of some force that could turn his failures into success. He asserts the God-Power can turn our failures into success and bring us material and spiritual abundance."
+        }
+      },{
+        "media": {
+          "url": "https://img.youtube.com/vi/CVXQ3X6Q8oU/maxresdefault.jpg",
+          "caption": "University of Idaho vs. University of Southern California (Football), 10/30/1925",
+          "link": "/collectionbuilder-gh/item.html?id=demo_004",
+          "credit": "CollectionBuilder-GH"
+        },
+        "start_date": { 
+          "month": "10",
+          "day": "30",
+          "year": "1925"
+        },
+        "text": {
+          "headline": "University of Idaho vs. University of Southern California (Football), 10/30/1925",
+          "text": "Idaho Football vs. University of Southern California 10/30/1925 at Neale Stadium in Moscow, ID. Score: 7 - 51 (L)."
+        }
+      }
     ]
 }

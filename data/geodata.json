@@ -1,23 +1,84 @@
----
-# generate geojson data for collection items with lat-longs
----
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.latitude != nil and item.longitude != nil' -%}
-{%- assign fields = site.data.theme.metadata-export-fields | split: "," -%}
 {
     "type": "FeatureCollection",
     "features": [ 
-        {% for item in items %}
+        
         {
             "type":"Feature",
             "geometry":{
                 "type":"Point",
-                "coordinates":[{{ item.longitude }},{{ item.latitude }}]
+                "coordinates":[-117.009633,46.725562]
             },            
             "properties":{
-                {% for f in fields %}{% if item[f] %}{{ f | jsonify }}: {{ item[f] | jsonify }},{% endif %}
-                {% endfor %}
-                "reference_url": {{ '/items/' | absolute_url | append: item.objectid | append: '.html' | jsonify }}
+                "title": "Administration Building, University of Idaho, No. 30",
+                "creator": "Pacific Photo Co.",
+                "date": "1910",
+                "description": "Photographic postcard of the University of Idaho administration building in Moscow, Idaho.",
+                "subject": "universities; buildings; campuses; picture postcards",
+                "location": "Moscow, Idaho",
+                "latitude": "46.725562",
+                "longitude": "-117.009633",
+                "source": "PG 9, Postcard Collection, University of Idaho Library Special Collections and Archives",
+                "identifier": "pg_9_12_01bl",
+                "type": "Image;StillImage",
+                "format": "image/jpeg",
+                "language": "eng",
+                
+                "rightsstatement": "http://rightsstatements.org/vocab/NoC-US/1.0/",
+                
+                "reference_url": "https://collectionbuilder.github.io/collectionbuilder-gh/item.html?id=demo_001"
             }
-        }{% unless forloop.last %}, {% endunless %}{% endfor %}
+        }, 
+        {
+            "type":"Feature",
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-117.428031,47.66432]
+            },            
+            "properties":{
+                "title": "Spokane County Court House, Spokane, Washington",
+                "creator": "Spokane Post Card Co.",
+                "date": "1912-09-08",
+                "description": "Postcard is of the Spokane County Courthouse in Spokane, Washington. Postmark 9/8/1912, Spokane, WA. Destination San Francisco, CA.",
+                "subject": "public buildings; county courthouses; trees; picture postcards",
+                "location": "Spokane, Washington",
+                "latitude": "47.66432",
+                "longitude": "-117.428031",
+                "source": "PG 107, Knowles Postcard Collection, University of Idaho Library Special Collections and Archives",
+                "identifier": "Postcard_032",
+                "type": "Image;StillImage",
+                "format": "application/pdf",
+                "language": "eng",
+                
+                "rightsstatement": "http://rightsstatements.org/vocab/NoC-US/1.0/",
+                
+                "reference_url": "https://collectionbuilder.github.io/collectionbuilder-gh/item.html?id=demo_002"
+            }
+        }, 
+        {
+            "type":"Feature",
+            "geometry":{
+                "type":"Point",
+                "coordinates":[ -117.015671,46.726113 ]
+            },            
+            "properties":{
+                "title": "University of Idaho vs. University of Southern California (Football), 10/30/1925",
+                "creator": "Vandal Athletics",
+                "date": "1925-10-30",
+                "description": "Idaho Football vs. University of Southern California 10/30/1925 at Neale Stadium in Moscow, ID. Score: 7 - 51 (L).",
+                "subject": "American Football",
+                "location": "Moscow, Idaho",
+                "latitude": "46.726113 ",
+                "longitude": " -117.015671",
+                "source": "Vandal Video Collection, Digital Initiatives, University of Idaho Library",
+                "identifier": "MG 23, Item 29",
+                "type": "Image;MovingImage",
+                "format": "video/mp4",
+                "language": "eng",
+                "rights": "CC - Attribution 4.0 International. Digital reproduction rights assigned to the University of Idaho Library by donor/contributing institution/source (as applicable). For more information, please contact University of Idaho Library Special Collections and Archives Department at libspec@uidaho.edu.",
+                "rightsstatement": "https://creativecommons.org/licenses/by/4.0/",
+                
+                "reference_url": "https://collectionbuilder.github.io/collectionbuilder-gh/item.html?id=demo_004"
+            }
+        }
     ]
 }

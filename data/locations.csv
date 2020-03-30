@@ -1,15 +1,16 @@
----
-# find all unique locations used in the metadata
----
-{%- if site.data.theme.locations-fields -%}
-{%- assign locations-fields = site.data.theme.locations-fields | split: ";" -%}
-{%- assign places = "" -%}
-{%- for c in locations-fields -%}
-{% assign new = site.data[site.metadata] | map: c | join: ";" %}
-{% assign places = places | append: ";" | append: new %}
-{%- endfor -%}
-{%- assign uniqPlaces = places | downcase | split: ";" | array_count_uniq -%}
 location,count,link
-{% for s in uniqPlaces %}"{{ s[0] }}",{{ s[1] }},"{{ s[0] | url_param_escape | prepend: '/browse.html#' | absolute_url }}"
-{% endfor %}
-{%- endif -%}
+"american football",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#american%20football"
+"buildings",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#buildings"
+"campuses",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#campuses"
+"county courthouses",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#county%20courthouses"
+"failure",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#failure"
+"frank b. robinson",2,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#frank%20b.%20robinson"
+"material abundance",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#material%20abundance"
+"pacific photo co.",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#pacific%20photo%20co."
+"picture postcards",2,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#picture%20postcards"
+"public buildings",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#public%20buildings"
+"spokane post card co.",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#spokane%20post%20card%20co."
+"success",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#success"
+"trees",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#trees"
+"universities",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#universities"
+"vandal athletics",1,"https://collectionbuilder.github.io/collectionbuilder-gh/browse.html#vandal%20athletics"

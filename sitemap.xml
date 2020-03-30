@@ -1,14 +1,126 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
-{% if jekyll.environment == "production" %}
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% for p in site.html_pages %}
+
+
    <url>
-      <loc>{{ p.url | absolute_url }}</loc>
-      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/404.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
       <changefreq>monthly</changefreq>
+
    </url>
-{% endfor %}
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/about.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/browse.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/data/</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/pages/google-search.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/item.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/locations.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/map.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/search/</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/subjects.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://collectionbuilder.github.io/collectionbuilder-gh/timeline.html</loc>
+
+      <lastmod>2020-03-30T13:43:16-07:00</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
 </urlset> 
-{% endif %}
